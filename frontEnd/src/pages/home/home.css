@@ -1,0 +1,57 @@
+.sidebar{
+    width: 350px;
+    height: 100vh;
+    background-color: var(--cor-background-sidebar);
+    position: fixed; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+.boxLogo{
+    display: flex; 
+    color: var(--cor-fundo);
+    gap: 15px;
+    
+}
+.titleLogo{
+    
+}
+.boxLogo h3{
+    
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1;   
+     
+    
+}
+.logo{
+    width: 80px;
+    
+    
+}
+.logo img{
+    width: 100%;
+}
+.sidebar ul{
+    padding: 50px 0;
+    color: var(--cor-fundo);
+    width: 100%;
+}
+.sidebar ul li{
+    list-style: none;
+    padding: 20px ;
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.sidebar ul li:hover{
+    background-color: var(--cor-primaria);
+    cursor: pointer;
+    border-radius: 10px;
+}
+.itenSideBar{
+    font-size: 23px;
+}

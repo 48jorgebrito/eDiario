@@ -1,7 +1,21 @@
+:root {
+  --cor-primaria: #1E88E5;
+  --cor-secundaria: #1565C0;
+  --cor-fundo: #F5F7FA;
+  --cor-texto: #212121;
+  --cor-texto-secundario: #616161;
+  --cor-card: #FFFFFF;
+  --cor-borda: #E0E0E0;
+  --cor-erro: #D32F2F;
+  --cor-sucesso: #43A047;
+  --cor-background-sidebar: #213a51;
+  --cor-login:#5683b9;
+}
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
 
 

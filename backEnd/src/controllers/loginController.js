@@ -28,7 +28,15 @@ module.exports = {
                 secret,                           // secret
                 {expiresIn: '1y', subject: '1'}  // tempo de expiracao
             )
-           return res.status(200).json({token:token})
+            const {id:_id, userName: userName } = user
+           return res.status(200).json(
+            {
+                token:token,
+                user:{
+                    id:user._id,
+                    userName: user.userName
+                }
+            })
 
         }
         catch(err){
