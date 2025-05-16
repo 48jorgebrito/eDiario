@@ -8,7 +8,7 @@ export default function Home(){
         <div className='home-container'>
              <SideBar/>
 
-            
+            <div className='contentContainer'>homer</div>
         </div>
     )
 }

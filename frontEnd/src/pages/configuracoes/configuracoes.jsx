@@ -5,6 +5,7 @@ export default function Configuracoes(){
     return(
         <div className='configuracoes-container'>
             <SideBar/>
+            <div className='contentContainer'>config</div>
         </div>
     )
 }

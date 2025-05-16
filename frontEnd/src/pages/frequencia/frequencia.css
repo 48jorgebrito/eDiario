@@ -1,0 +1,36 @@
+
+.contentFrequencia{
+    display: flex;
+    justify-content: space-between;
+}
+.contentFrequencia .presenca{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+ .presenca .presente {
+    color: rgba(69, 187, 33, 0.479);
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+}
+.presenca .falta {
+    color: rgba(255, 0, 0, 0.322);
+    font-size: 20px;
+    
+    
+    
+
+}
+.contentFrequencia .presenca .falta,
+.contentFrequencia .presenca .presente:hover{
+    cursor: pointer;
+} 
+.contentFrequencia .presenca .presenteChecked {
+    color: rgb(69, 187, 33);
+}
+.contentFrequencia .presenca .faltaChecked {
+    color: rgb(255, 0, 0);
+}

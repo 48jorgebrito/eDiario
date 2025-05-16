@@ -5,6 +5,7 @@ export default function Notas(){
     return(
         <div className='notas-container'>
             <SideBar/>
+            <div className='contentContainer'>notas</div>
         </div>
     )
 }

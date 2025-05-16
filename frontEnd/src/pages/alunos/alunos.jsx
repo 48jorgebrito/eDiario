@@ -5,6 +5,7 @@ export default function Alunos(){
     return(
         <div className='alunos-container'>
             <SideBar/>
+            <div className='contentContainer'>alunos</div>
         </div>
     )
 }

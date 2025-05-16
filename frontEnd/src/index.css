@@ -17,6 +17,20 @@
   box-sizing: border-box;
   font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', sans-serif;
 }
+.contentContainer{
+ 
+  width: calc(100vw - 350px);
+  position: absolute;
+  right: 0;
+  
+}
+@media (max-width: 768px){
+  .contentContainer{
+    top: 90px;
+    width: 100%;
+    z-index: -1;
+  }  
 
+}
 
 
