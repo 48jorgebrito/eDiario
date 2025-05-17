@@ -28,9 +28,12 @@
 .contentFrequencia .presenca .presente:hover{
     cursor: pointer;
 } 
-.contentFrequencia .presenca .presenteChecked {
+.presenca input[type=radio]:checked + .presente {
     color: rgb(69, 187, 33);
 }
-.contentFrequencia .presenca .faltaChecked {
+.presenca input[type=radio]:checked + .falta {
     color: rgb(255, 0, 0);
+}
+.presenca input[type=radio]{
+    display: none;
 }

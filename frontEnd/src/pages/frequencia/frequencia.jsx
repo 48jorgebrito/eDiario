@@ -9,7 +9,14 @@ export default function Frequencia(){
     
     const [select, setSelect] = useState("")
 
-    
+    const alunos = [
+        {id: '1', nome: 'ramiro'},
+        {id: '2', nome: 'yanna'},
+        {id: '3', nome: 'miguel'},
+        {id: '4', nome: 'thadylla'},
+        {id: '5', nome: 'conceicao'},
+        {id: '6', nome: 'ramia'},
+    ]
 
     return(
         <div className='frequencia-container '>
@@ -26,60 +33,38 @@ export default function Frequencia(){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Thadylla Mendes de Azeveddo</td>
-                            <td className='presenca'>
-                                
-                                <label className={`presente ${select === 'presenca'? 'presenteChecked': ''}`} htmlFor='present' ><FaCheckCircle /></label >
-                                <input 
-                                    type="radio" 
-                                    name='frequencia' 
-                                    value='presenca' 
-                                    id='present'
-                                    checked={select === 'presenca'}
-                                    onChange={(e) => setSelect(e.target.value)}
+
+                        {
+                            alunos.map((aluno)=>(
+                            <tr key={aluno.id}>
+                                <td>{aluno.nome}</td>
+                                <td className='presenca'>
                                     
-                                />
-                                
-                                <label  className={`falta ${select === 'falta'? 'faltaChecked': ''}`} htmlFor='fault'><IoMdCloseCircle /></label >
-                                <input 
-                                    type="radio" 
-                                    name='frequencia' 
-                                    value='falta' 
-                                    id='fault'
-                                    checked={select === 'falta'}
-                                    onChange={(e) => setSelect(e.target.value)}
-                                />
-                            </td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Yanna Gabriele Veloso Brito</td>
-                            <td className='presenca'>
-                                
-                                <label className={`presente ${select === 'presenca' ? 'presenteChecked': ''}`} htmlFor='present' ><FaCheckCircle /></label >
-                                <input 
-                                    type="radio" 
-                                    name='frequencia' 
-                                    value='presenca' 
-                                    id='present'
-                                    checked={select === 'presenca'}
-                                    onChange={(e) => setSelect(e.target.value)}
+                                    <input 
+                                        type="radio" 
+                                        name={aluno.nome} 
+                                        value='presenca' 
+                                        id={aluno.id}
+                                        
+                                        
+                                    />
+                                    <label className={`presente`} htmlFor={aluno.id} ><FaCheckCircle /></label >
                                     
-                                />
+                                    <input 
+                                        type="radio" 
+                                        name={aluno.nome} 
+                                        value='falta' 
+                                        id={aluno.id + 1}
+                                    
+                                    />
+                                    <label  className={`falta`} htmlFor={aluno.id + 1}><IoMdCloseCircle /></label >
+                                </td>
                                 
-                                <label  className={`falta ${select === 'falta'? 'faltaChecked': ''}`} htmlFor='fault'><IoMdCloseCircle /></label >
-                                <input 
-                                    type="radio" 
-                                    name='frequencia' 
-                                    value='falta' 
-                                    id='fault'
-                                    checked={select === 'falta'}
-                                    onChange={(e) => setSelect(e.target.value)}
-                                />
-                            </td>
-                            
-                        </tr>
+                            </tr>
+
+                            ))
+                        }
+                       
                     </tbody>
                 </table>
             </div>
