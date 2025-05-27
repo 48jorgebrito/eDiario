@@ -8,7 +8,7 @@ module.exports = {
     async create(req, res){
         
         try{
-            const {cpf, userName, email, password} = req.body
+            const {cpf, userName, email, password, userType} = req.body
             
             const existEmail = await User.findOne({email})
             const existCpf = await User.findOne({cpf})
@@ -26,7 +26,8 @@ module.exports = {
                 userName,
                 cpf,
                 email,
-                password:passwordHash
+                password:passwordHash,
+                userType
             }
             await User.create(newUser)
             res.status(200).json(newUser)

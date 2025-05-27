@@ -28,13 +28,14 @@ module.exports = {
                 secret,                           // secret
                 {expiresIn: '1y', subject: '1'}  // tempo de expiracao
             )
-            const {id:_id, userName: userName } = user
+            const {id:_id, userName: userName, userType: userType } = user
            return res.status(200).json(
             {
                 token:token,
                 user:{
                     id:user._id,
-                    userName: user.userName
+                    userName: user.userName,
+                    userType
                 }
             })
 

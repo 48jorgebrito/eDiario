@@ -1,5 +1,5 @@
 import './frequencia.css'
-import SideBar from '../../components/sideBar/sideBar'
+import SideBar from '../../../components/sideBar/sideBar'
 import { FaCheckCircle } from "react-icons/fa";
 import { IoMdCloseCircle } from "react-icons/io";
 import { useState } from 'react';

@@ -5,7 +5,9 @@ const userSchema = new Schema({
   userName: { type: String, required: true },
   email: { type: String, required: true },
   cpf:{type:Number, required: true, unique: true},
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  userType:{type:String, require:true, enum:['professor', 'aluno', 'admin']}
+
   
 }, { timestamps: true });
 

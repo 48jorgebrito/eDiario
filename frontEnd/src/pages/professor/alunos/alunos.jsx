@@ -1,5 +1,5 @@
 import './alunos.css'
-import SideBar from '../../components/sideBar/sideBar'
+import SideBar from '../../../components/sideBar/sideBar'
 export default function Alunos(){
     
     return(

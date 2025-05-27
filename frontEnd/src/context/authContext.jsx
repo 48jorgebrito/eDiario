@@ -9,6 +9,7 @@ export const AuthProvider = ({ children }) => {
     const navigate = useNavigate()
     const [authenticated, setAuthenticated] = useState(true)
     const [loading, setLoading] = useState(true)
+    const [userType, setUserType] = useState('')
     
     useEffect(() => {
       const token = localStorage.getItem('token');
@@ -25,10 +26,12 @@ export const AuthProvider = ({ children }) => {
   const login = (token, user) => {
     localStorage.setItem('user', JSON.stringify(user))
     localStorage.setItem('token', token);
+    
 
     Api.defaults.headers.Authorization = `Bearer ${token}` 
 
     setAuthenticated(true)
+    
     navigate('/')
   };
 
