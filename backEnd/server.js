@@ -14,7 +14,7 @@ app.use(routesUsers)
 app.use(routesEscolas)
 
 
-mongoose.connect('mongodb://localhost:27017/eDiario').then(()=>{
+mongoose.connect('mongodb://localhost:27017/eDiarioDev').then(()=>{
 app.listen(8080)
 console.log('servidor rodando na porta 8080')
 }).catch((error)=>{

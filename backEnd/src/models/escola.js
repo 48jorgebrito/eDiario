@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const alunosSchema = new Schema({
     
         nome:String,
-        sobrenome:String
+        idade:String
     
 })
 const turmasSchema = new Schema({
@@ -17,19 +17,14 @@ const turmasSchema = new Schema({
 })
 const escolaSchema = new Schema({
     nomeEscola: { type: String, required: true },
-    diretor:[{
-            nome:String, 
-            cpf:Number,
-            email:String,
-            celular:Number
-        }],
+    diretor:[],
     endereco:{ 
             rua:String,
             bairro:String,
             numero:String,
             cidade:String
         },
-    turmas:[ turmasSchema]
+    turmas:[turmasSchema]
 
   
   

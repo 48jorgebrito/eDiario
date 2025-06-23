@@ -6,7 +6,7 @@ module.exports  = {
 
         try{
 
-            const { nomeEscola, diretor, endereco, turmas } = req.body
+            const { nomeEscola,  endereco } = req.body
             
 
             const existEscola = await Escolas.findOne({nomeEscola})
@@ -20,22 +20,14 @@ module.exports  = {
 
                  const newEscola = {
                             nomeEscola,
-                            diretor:{
-                                nome:diretor.nome,
-                                cpf:diretor.cpf,
-                                email:diretor.email,
-                                ceular:diretor.ceular
-                            },
+    
                             endereco: {
                                 rua: endereco.rua,
                                 bairro: endereco.bairro,
                                 numero:endereco.numero,
                                 cidade:endereco.cidade 
-                                },
-                            turmas:{
-                                salaDeAula: turmas.salaDeAula,
-                                serie: turmas.serie
-                            }
+                                }
+                            
                             }
                 await Escolas.create(newEscola)
                 res.status(200).json({message:'escola cadastrada com sucesso', newEscola})
@@ -44,39 +36,40 @@ module.exports  = {
 
         }catch(err){
             console.log(err)
-            res.status(500).json({message: "Error ao adicionar a escola.", error:err.message})
+            res.status(500).json({message: "Erro ao adicionar a escola.", error:err.message})
         }
 
     },
-    
-    
-    async addTurmas(req, res){
-        
+    async listaDeEscolas(req, res){
+
         try{
-    
-            const {id} = req.params
-            const {sala, serie, nome, sobrenome} = req.body
-            
-
-            const escola = await Escolas.findById(id)
-
-            if(!escola){
-               return res.status(500).json({message:'A escola informada não está cadastrada'})
-            }
-
-                escola.alunos.push({nome, sobrenome})
-                escola.turmas.push({sala, serie})
-                await escola.save()
-
-                res.status(200).json({ message: 'turma adicionada com sucesso', escola })
-
+            const escolas = await Escolas.find()
+             res.status(200).json({message:"Estas são todas as escolas cadastradas".toLocaleUpperCase(), escolas})
 
 
         }catch(err){
             console.log(err)
-            res.status(500).json({message: 'error ao cadastrar a turma', error:err})
-        } 
+            res.status(500).json({message:'Erro ao buscar as escolas cadastradas', error:err})
+        }
+    },
 
+    async escola(req, res){
+        try{
+            
+            const {escolaId} = req.params
+            const escola = await Escolas.findById(escolaId)
+
+            res.status(200).json({message:"escola encontrada".toUpperCase(), escola})
+
+
+        }catch(err){
+            console.log(err)
+            res.status(500).json({message:'Erro ao buscar esta escola', error:err})
+        }
     }
+    
+    
+    
+    
 
 }
