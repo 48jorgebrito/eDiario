@@ -16,18 +16,16 @@ async matricularAluno(req, res){
         turma.alunos.push({nome, idade})
          await escola.save()
         
-        res.status(200).json({message:`O aluno  foi ${nome} matriculado com sucesso.`, turma})
+       return  res.status(200).json({message:`O aluno  foi ${nome} matriculado com sucesso.`, turma})
 
 
     }catch(err){
         console.log(err)
-        res.status(500).json({message:"Erro ao matricular o aluno."})
+        return res.status(500).json({message:"Erro ao matricular o aluno."})
     }
 
     }
 
 
     }
-     /*
-        const matricular = turma.alunos.push({nome, idade})
-        */
+    

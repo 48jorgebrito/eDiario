@@ -21,13 +21,13 @@ module.exports = {
                 escola.turmas.push({sala, serie})
                 await escola.save()
 
-                res.status(200).json({ message: 'turma adicionada com sucesso', escola })
+               return res.status(200).json({ message: 'turma adicionada com sucesso', escola })
 
 
 
         }catch(err){
             console.log(err)
-            res.status(500).json({message: 'erro ao cadastrar a turma', error:err})
+            return res.status(500).json({message: 'erro ao cadastrar a turma', error:err})
         } 
 
     },
@@ -37,11 +37,11 @@ module.exports = {
             const escola = await Escolas.findById(escolaId)
             const listaDeturmas =  escola.turmas
              
-            res.status(200).json(listaDeturmas)
+            return res.status(200).json(listaDeturmas)
 
         }catch(err){
             console.log(err)
-            res.status(500).json({message:"erro ao buscar lista de turmas"})
+            return res.status(500).json({message:"erro ao buscar lista de turmas"})
         }
     },
     async turma(req, res){
@@ -52,11 +52,24 @@ module.exports = {
             const turma = listaDeturmas.id(turmaId)
             
             
-            res.status(200).json({turma})
+            return res.status(200).json({turma})
 
         }catch(err){
             console.log(err)
-            res.status(500).json({message:"erro ao buscar a turma "})
+            return res.status(500).json({message:"erro ao buscar a turma "})
+        }
+    },
+    async editarTurma(req, res){
+        try{
+            const {escolaId, turmaId} = req.params
+            const escola = await Escolas.findById(escolaId)
+            const listaDeturmas =  escola.turmas
+            const turma = listaDeturmas.id(turmaId)
+
+            
+        }catch(err){
+            console.log(err)
+            return res.status(500).json({message:"error ao editar a turma"})
         }
     }
 }

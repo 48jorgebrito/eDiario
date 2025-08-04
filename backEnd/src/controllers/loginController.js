@@ -41,7 +41,7 @@ module.exports = {
 
         }
         catch(err){
-            res.status(402).json({message:"Erro no processo de login", error:err})
+            return res.status(402).json({message:"Erro no processo de login", error:err})
         }
     }
 

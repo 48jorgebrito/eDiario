@@ -14,8 +14,8 @@ module.exports = {
             const existCpf = await User.findOne({cpf})
             
             if(existCpf || existEmail){
-                res.status(500).json({message:"CPF ou Email estão vinculados a uma outra conta."})
-                return
+                return res.status(500).json({message:"CPF ou Email estão vinculados a uma outra conta."})
+                
             }
            
             
@@ -30,11 +30,11 @@ module.exports = {
                 userType
             }
             await User.create(newUser)
-            res.status(200).json(newUser)
+            return res.status(200).json(newUser)
     
         }catch(err){
             console.log(err)
-            res.status(500).json({message: "Error ao registrar o usuário.", error:err.message})
+            return res.status(500).json({message: "Error ao registrar o usuário.", error:err.message})
         }
     },
     async list(req, res){
