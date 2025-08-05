@@ -85,7 +85,9 @@ module.exports  = {
                    
                    
                 }
-                await Escolas.updateOne({
+                await Escolas.updateOne(
+                        {_id:escolaId},
+                        {
                             nomeEscola,
     
                             endereco: {

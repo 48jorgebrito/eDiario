@@ -8,8 +8,8 @@ const alunosController = require('../controllers/alunosController')
 router.post('/addEscola', escolasController.addEscola)
 router.get('/escolas', escolasController.listaDeEscolas)
 router.get('/escola/:escolaId', escolasController.escola)
-router.delete('/excluirEscola/:escolaId', escolasController.excluirEscola)
 router.put('/editarEscola/:escolaId', escolasController.editarEscola)
+router.delete('/excluirEscola/:escolaId', escolasController.excluirEscola)
 
 /*ROTAS DAS TURMAS DE CADA ESCOLA*/
 router.post('/escola/:escolaId/addTurma', turmasController.addTurma)
